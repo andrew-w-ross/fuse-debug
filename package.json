@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"clean": "rimraf dist/",		
+		"clean": "rimraf dist/",
 		"start": "node fuse.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -15,7 +15,7 @@
 		"@types/node": "^8.0.13",
 		"@types/react": "^15.0.38",
 		"@types/react-dom": "^15.5.1",
-		"fuse-box": "^2.2.0",
+		"fuse-box": "^2.2.1-beta.5",
 		"rimraf": "^2.6.1",
 		"typescript": "^2.4.1"
 	},
