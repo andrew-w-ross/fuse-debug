@@ -3,7 +3,7 @@ const { FuseBox, WebIndexPlugin } = require("fuse-box");
 const fuse = FuseBox.init({
 	homeDir: "src/",
 	output: "dist/$name.js",
-	sourceMaps: true, //{ sourceRoot: "/src", inline: false },
+	sourceMaps: { sourceRoot: "src", inline: false },
 	plugins: [
 		WebIndexPlugin({ bundles: ["app"] })
 	]
