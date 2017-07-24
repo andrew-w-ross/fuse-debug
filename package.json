@@ -20,6 +20,7 @@
 		"typescript": "^2.4.1"
 	},
 	"dependencies": {
+		"app-root-path": "^2.0.1",
 		"react": "^15.6.1",
 		"react-dom": "^15.6.1"
 	}
