@@ -1,14 +1,31 @@
 {
 	"version": "0.2.0",
-	"configurations": [
+	"configurations": [				
 		{
 			"type": "chrome",
 			"request": "launch",
-			"name": "Launch Chrome against localhost",
+			"name": "Launch Chrome",
 			"url": "http://localhost:4444",
 			"webRoot": "${workspaceRoot}",
-			"preLaunchTask": "start",
-			"trace": "verbose"
+			"showAsyncStacks": true,
+			"disableNetworkCache": true
+		},		
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Fusebox",
+			"program": "${workspaceRoot}/fuse.js",
+			"showAsyncStacks": true,
+			"smartStep": true
+		}
+	],
+	"compounds": [
+		{
+			"name": "Start Both",
+			"configurations": [
+				"Launch Fusebox",
+				"Launch Chrome"
+			]
 		}
 	]
 }

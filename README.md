@@ -7,4 +7,11 @@ This is a demonstration on how to debug a [fuse-box](http://fuse-box.org/) proje
 - Install dependecies with `npm i`
 - Open this project in `vscode` and install the 
 [chrome-debug](https://github.com/Microsoft/vscode-chrome-debug) extension.
-- Then hit `f5` to start fuse-box and launch a new instance of chrome with debugging enabled
+- Start `fuse-box` with the start task in vscode or `npm start` in your terminal
+- Then hit `f5` in `vscode` to start fuse-box and launch a new instance of chrome with debugging enabled
+
+Optionally there is a compound configuration `Start Both` that will let you see what fuse-box when running.
+
+## Notes
+
+Currently when debugging source-maps won't update on hot reload it's currently tracked in issue fuse-box/fuse-box#673.
