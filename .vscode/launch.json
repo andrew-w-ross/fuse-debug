@@ -2,14 +2,6 @@
 	"version": "0.2.0",
 	"configurations": [				
 		{
-			"type": "node",
-			"request": "launch",
-			"name": "Launch Program",
-			"program": "${workspaceRoot}/fuse.js",
-			"showAsyncStacks": true,
-			"smartStep": true
-		},
-		{
 			"type": "chrome",
 			"request": "launch",
 			"name": "Launch Chrome",
@@ -17,13 +9,21 @@
 			"webRoot": "${workspaceRoot}",
 			"showAsyncStacks": true,
 			"disableNetworkCache": true
-		}		
+		},		
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Fusebox",
+			"program": "${workspaceRoot}/fuse.js",
+			"showAsyncStacks": true,
+			"smartStep": true
+		}
 	],
 	"compounds": [
 		{
 			"name": "Start Both",
 			"configurations": [
-				"Launch Program",
+				"Launch Fusebox",
 				"Launch Chrome"
 			]
 		}
