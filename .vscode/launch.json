@@ -8,7 +8,11 @@
 			"url": "http://localhost:4444",
 			"webRoot": "${workspaceRoot}",
 			"showAsyncStacks": true,
-			"disableNetworkCache": true
+			"disableNetworkCache": true,
+			"trace": "verbose",
+			"sourceMapPathOverrides": {
+				"/src/*": "${webRoot}/src/*"
+			}
 		},		
 		{
 			"type": "node",
