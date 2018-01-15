@@ -1,22 +1,37 @@
-const { path: rootPath } = require("app-root-path");
-const { FuseBox, WebIndexPlugin } = require("fuse-box");
-const path = require("path");
+const { FuseBox, WebIndexPlugin } = require('fuse-box');
 
 const fuse = FuseBox.init({
-	homeDir: "src/",									
-	output: "dist/$name.js",
-	modulesFolder: path.join(rootPath, "node_modules"), //Only needed if you are globally linking for dev purposes
-	sourceMaps: { sourceRoot: "src", inline: false }, //By default the sourceRoot is /src this generally breaks the vscode debugger	
+	homeDir: 'src/',
+	output: 'dist/$name.js',
+	sourceMaps: { inline: false, vendor: false }, //Not needed as we are debugging with vscode
 	plugins: [
-		WebIndexPlugin({ bundles: ["app"] })
+		WebIndexPlugin({			
+			bundles: [ 'public/client' ],
+			title: 'fuse-debug'
+		})
 	]
 });
 
-fuse.dev({ httpServer: true, hmr: true });
+fuse.dev({ httpServer: false });
 
-fuse.bundle("app")
-	.instructions(">index.tsx")
-	.watch()
-	.hmr();	
+fuse
+	.bundle('public/client')
+	.instructions('>client/index.tsx')
+	//When in dev push the version as high as possible
+	.target('browser@es2017') 
+	.watch('src/client/**')
+	.hmr();
+
+fuse
+	.bundle('server')
+	.instructions('>[server/index.ts]')
+	.target('server@es2017')
+	.watch('src/server/**')
+	.hmr()	
+	.completed((proc) => {		
+		proc.require({
+			close: ({ FuseBox }) => FuseBox.import(FuseBox.mainFile).shutdown()
+		});
+	});
 
 fuse.run();

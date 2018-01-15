@@ -1,5 +1,7 @@
 import * as React from "react";
 import { Adder } from "./Adder";
+import { ServerCaps } from "./ServerCaps";
+
 
 export class Main extends React.Component {
 	render() {
@@ -7,7 +9,8 @@ export class Main extends React.Component {
 			<div>
 				<h1>Hello World</h1>
 				<Adder />
-				<Adder value={1}/>
+				<hr/>				
+				<ServerCaps />
 			</div>
 		);
 	}

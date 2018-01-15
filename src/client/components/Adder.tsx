@@ -10,7 +10,7 @@ const DEFAULT_STATE : State = {
 
 export class Adder extends React.Component<Partial<State>, State>{
 	constructor(props: State) {
-		super();
+		super(props);
 		this.state = {...DEFAULT_STATE, ...props};
 	}
 
@@ -23,7 +23,7 @@ export class Adder extends React.Component<Partial<State>, State>{
 	render() {
 		return (
 			<div>
-				<h1>Current Value {this.state.value}</h1>
+				<h2>Current Value {this.state.value}</h2>
 				<button onClick={() => this.add()}>Click Me</button>
 			</div>
 		);
