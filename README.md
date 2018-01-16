@@ -1,6 +1,6 @@
 # fuse-box-debug
 
-This is a demonstration on how to debug a [fuse-box](http://fuse-box.org/) project with [visual studio code](https://code.visualstudio.com/).
+This is a demonstration on how to debug a [fuse-box](http://fuse-box.org/) project with [visual studio code](https://code.visualstudio.com/). A walkthrough on how it works can be found on the [fuse-box vscode debugging guide.](https://fuse-box.org/page/debugging-with-vscode)
 
 ## Setup
 
